@@ -1,40 +1,31 @@
-#!/usr/bin/env python
 """
-Routine to download all files from a publicly shared onedrive folder via shares REST API (https://dev.onedrive.com/shares/shares.htm)
-Writeen by Atila Xavier, May/2020
-Thanks to instructions at https://stackoverflow.com/questions/40454101/access-publicly-shared-onedrive-folder-via-api from Ryan Gregg (https://stackoverflow.com/users/3491656/ryan-gregg) and Brad (https://stackoverflow.com/users/3570009/brad)
+CoversBR_download.py
+Developed by Atila Xavier, 01/05/2020, as a tool to download all feature files of the CoversBR database (HDF5 format)
+shared_url = 'https://1drv.ms/u/s!AocykQAvhWc9ax_8RRkxKELRnSs?e=Z443ZC'
+Files are downloaded from a public repository, and will be saved with the same structure as the source, on the folder where this script is executed.
+Structure is:
+.
+	<work_id 1>
+		<track_id A>.h5
+		<track_id B>.h5
+		.
+		.
+		<track_id N>.h5
+	<work_id 2>
+		<track_id X>.h5
+		<track_id Y>.h5
+		.
+		.
 
+Writen for Python 3.x
+Depends on the libraries:
 """
-
 import requests
 import wget
 import os
 import base64
 import argparse
 
-#Example shared folder: CoversBR
-#https://1drv.ms/u/s!AocykQAvhWc9ax_8RRkxKELRnSs?e=Z443ZC
-#Depois que acessa o endereço mostrado é:
-#https://onedrive.live.com/?authkey=%21AB%5F8RRkxKELRnSs&id=3D67852F00913287%21107&cid=3D67852F00913287
-
-#Another example shared folder with recursive folders
-#https://1drv.ms/u/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t?e=IMUqpd
-
-#Instructions at: https://stackoverflow.com/questions/40454101/access-publicly-shared-onedrive-folder-via-api
-#To convert this URL into the API, you first base64 encode the URL and append u! (em https://base64.guru/standards/base64url/encode)
-#https://1drv.ms/u/s!AocykQAvhWc9ax_8RRkxKELRnSs?e=Z443ZC
-#Converted (and with u! at the begining) becomes:
-#u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM
-
-# Using base64 python´s encoder :
-#u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM=
-
-#Now you can use this URL as the sharing token, and expand children and thumbnails:
-#https://api.onedrive.com/v1.0/shares/<COLOQUE A URL EM BASE64 COM O u! NO INICIO AQUI>/root?expand=children
-#https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM/root?expand=children
-
-#To list files from a folder named "10":
-#https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM/root:/10:/children
 
 def Dl_file(fchild, local_folder_name):
 	fname = fchild['name']
@@ -58,7 +49,6 @@ def Dl_file(fchild, local_folder_name):
 			print(" OK - %d bytes received"%received_size)
 		else:
 			print("Error downloading %s: expected %d bytes, received %d bytes"%(out_path_file_name, fsize, received_size))
-		
 
 def Dl_child(child, remote_folder_name, local_folder):
 	"""
@@ -133,5 +123,3 @@ if __name__ == '__main__':
 			Dl_child(child, folder_name, local_folder_name)
 		else:
 			Dl_file(child, local_folder_name)
-
-
