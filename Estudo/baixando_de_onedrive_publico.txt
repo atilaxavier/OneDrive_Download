@@ -1,0 +1,14 @@
+#
+# Para ler raiz:
+
+https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM/root?expand=children
+
+# Para ler arquivos em uma pasta (no exemplo a pasta de nome "10"
+https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM/root:/10:/children
+
+# Para baixar um arquivo, pode usar a download URL da resposta:
+#{"@odata.context":"https://api.onedrive.com/v1.0/$metadata#shares('u%21aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM')/items('root%252F10')/children","@odata.count":8,"value":[{"@content.downloadUrl":"https://bqj2aa.ch.files.1drv.com/y4mwmAFxQsPuzxnVZuBJfRj15KsP1CgyEgtzqgQKTNssfpuwtcjbhkw1wjyslrIjfzvriW6UZ3X04bAVGbP3QcevUeV0UQDBvp37OCNa2Y_ogANH5EykbJffgRGZNAjHD-qOBXcsRuMtF0t6N6d875E8_1RkTxt2OglrT2Jzwr94HsfYQdv07xqEzlNpzNDc1QbLEwRFDBwS8IhaQ9QOm1lmg","createdBy":{"application":{"displayName":"OneDrive","id":"481710a4"},"user":{"displayName":"Dirceu Silva","id":"3d67852f00913287"}},"createdDateTime":"2020-04-28T16:40:23.42Z","cTag":"aYzozRDY3ODUyRjAwOTEzMjg3ITE0OS4yNTc","eTag":"aM0Q2Nzg1MkYwMDkxMzI4NyExNDkuMQ","id":"3D67852F00913287!149","lastModifiedBy":{"application":{"displayName":"OneDrive","id":"481710a4"},"user":{"displayName":"Dirceu Silva","id":"3d67852f00913287"}},"lastModifiedDateTime":"2020-04-28T16:46:52.96Z","name":"11493.h5","parentReference":{"driveId":"3d67852f00913287","driveType":"personal","id":"3D67852F00913287!111","name":"10","path":"/shares/s!AocykQAvhWc9ax_8RRkxKELRnSs/items/3D67852F00913287!107:/10","shareId":"s!AocykQAvhWc9bx_8RRkxKELRnSs"},"size":4521941,"webUrl":"https://1drv.ms/u/s!AocykQAvhWc9gRUf_EUZMShC0Z0r
+
+# No caso, para baixar o arquivo 11493.h5:
+https://bqj2aa.ch.files.1drv.com/y4mwmAFxQsPuzxnVZuBJfRj15KsP1CgyEgtzqgQKTNssfpuwtcjbhkw1wjyslrIjfzvriW6UZ3X04bAVGbP3QcevUeV0UQDBvp37OCNa2Y_ogANH5EykbJffgRGZNAjHD-qOBXcsRuMtF0t6N6d875E8_1RkTxt2OglrT2Jzwr94HsfYQdv07xqEzlNpzNDc1QbLEwRFDBwS8IhaQ9QOm1lmg
+

@@ -1,0 +1,229 @@
+>>> print("%s"%json.dumps(data, indent=2, sort_keys=True),f)
+{
+  "@odata.context": "https://api.onedrive.com/v1.0/$metadata#shares('u%21aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaFZ5ajZpdXdHWmJzblFTWmpsT1BiX1ktdDV0P2U9SU1VcXBk')/items/$entity",
+  "cTag": "adDo1QjY2QzBBRUE4OEY3MjE1ITY1MTYuNjM3MjQxMTk5ODY2MjMwMDAw",
+  "children": [
+    {
+      "cTag": "adDo1QjY2QzBBRUE4OEY3MjE1ITY1MDcuNjM3MjQxMTk5ODY2MDAwMDAw",
+      "createdBy": {
+        "application": {
+          "displayName": "OneDrive website",
+          "id": "44048800"
+        },
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "createdDateTime": "2020-05-03T16:21:23.563Z",
+      "eTag": "aNUI2NkMwQUVBODhGNzIxNSE2NTA3LjE",
+      "fileSystemInfo": {
+        "createdDateTime": "2020-05-03T16:21:23.563Z",
+        "lastModifiedDateTime": "2020-05-03T16:25:14.503Z"
+      },
+      "folder": {
+        "childCount": 1,
+        "folderType": "document",
+        "folderView": {
+          "sortBy": "name",
+          "sortOrder": "ascending",
+          "viewType": "thumbnails"
+        }
+      },
+      "id": "5B66C0AEA88F7215!6507",
+      "lastModifiedBy": {
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "lastModifiedDateTime": "2020-05-03T16:26:26.6Z",
+      "name": "Pasta Teste 2",
+      "parentReference": {
+        "driveId": "5b66c0aea88f7215",
+        "driveType": "personal",
+        "id": "5B66C0AEA88F7215!6516",
+        "name": "Pasta_Compartilhada_Publicamente",
+        "path": "/shares/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t/root:",
+        "shareId": "s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t"
+      },
+      "reactions": {
+        "commentCount": 0
+      },
+      "size": 8367,
+      "webUrl": "https://1drv.ms/f/s!AhVyj6iuwGZbsmsSZjlOPb_Y-t5t"
+    },
+    {
+      "cTag": "adDo1QjY2QzBBRUE4OEY3MjE1ITY1MDYuNjM3MjQxMTk5ODY2MDAwMDAw",
+      "createdBy": {
+        "application": {
+          "displayName": "OneDrive website",
+          "id": "44048800"
+        },
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "createdDateTime": "2020-05-03T16:21:12.21Z",
+      "eTag": "aNUI2NkMwQUVBODhGNzIxNSE2NTA2LjE",
+      "fileSystemInfo": {
+        "createdDateTime": "2020-05-03T16:21:12.21Z",
+        "lastModifiedDateTime": "2020-05-03T16:25:14.583Z"
+      },
+      "folder": {
+        "childCount": 2,
+        "folderType": "document",
+        "folderView": {
+          "sortBy": "name",
+          "sortOrder": "ascending",
+          "viewType": "thumbnails"
+        }
+      },
+      "id": "5B66C0AEA88F7215!6506",
+      "lastModifiedBy": {
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "lastModifiedDateTime": "2020-05-03T16:26:26.6Z",
+      "name": "Pasta_teste",
+      "parentReference": {
+        "driveId": "5b66c0aea88f7215",
+        "driveType": "personal",
+        "id": "5B66C0AEA88F7215!6516",
+        "name": "Pasta_Compartilhada_Publicamente",
+        "path": "/shares/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t/root:",
+        "shareId": "s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t"
+      },
+      "reactions": {
+        "commentCount": 0
+      },
+      "size": 41217,
+      "webUrl": "https://1drv.ms/f/s!AhVyj6iuwGZbsmoSZjlOPb_Y-t5t"
+    },
+    {
+      "@content.downloadUrl": "https://ghpyaq.ch.files.1drv.com/y4mdWtvQDyiy8BgpUDNMwJ7wsYXkAp1K3ZpIK3eBExd0sNmGpfSruWl5ufYR1H3ok8O8-kFn6-87esnKPRmOaj1ah28o4K6z7cAXTm544qpzOHPWApXE5fY07Ln0C0slcJKoVz_J8qR_CJZUdktwPDvGmq5Nj5VHIkZgC-_oW8yvT2wmT_9ni2g4GQb6jxo7FNJJZRV5v4qafzcsw550sx7UQ",
+      "cTag": "aYzo1QjY2QzBBRUE4OEY3MjE1ITY1MDEuMjU5",
+      "createdBy": {
+        "application": {
+          "displayName": "OneDrive",
+          "id": "481710a4"
+        },
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "createdDateTime": "2020-04-27T16:59:03.967Z",
+      "eTag": "aNUI2NkMwQUVBODhGNzIxNSE2NTAxLjg",
+      "file": {
+        "hashes": {
+          "quickXorHash": "Fkz1p9jAuUubDC1pGBE17HcLYxw=",
+          "sha1Hash": "70D9C72546A899DF80EB24E28E527D65F5B4CE32",
+          "sha256Hash": "3D990050E26464517CBC34FB4511ACE4A77070C90C21C1B8D906AFD6FD653215"
+        },
+        "mimeType": "text/plain"
+      },
+      "fileSystemInfo": {
+        "createdDateTime": "2020-04-27T16:59:03.966Z",
+        "lastModifiedDateTime": "2020-05-03T16:25:53.226Z"
+      },
+      "id": "5B66C0AEA88F7215!6501",
+      "lastModifiedBy": {
+        "user": {
+          "displayName": "Atila Xavier",
+          "id": "5b66c0aea88f7215"
+        }
+      },
+      "lastModifiedDateTime": "2020-05-03T16:26:26.6Z",
+      "name": "Teste_OneDrive.txt",
+      "parentReference": {
+        "driveId": "5b66c0aea88f7215",
+        "driveType": "personal",
+        "id": "5B66C0AEA88F7215!6516",
+        "name": "Pasta_Compartilhada_Publicamente",
+        "path": "/shares/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t/root:",
+        "shareId": "s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t"
+      },
+      "reactions": {
+        "commentCount": 0
+      },
+      "shared": {
+        "owner": {
+          "user": {
+            "displayName": "Atila Xavier",
+            "id": "5b66c0aea88f7215"
+          }
+        },
+        "scope": "anonymous",
+        "sharedDateTime": "2020-04-27T19:29:10.9043514Z"
+      },
+      "size": 594,
+      "webUrl": "https://1drv.ms/t/s!AhVyj6iuwGZbsmUSZjlOPb_Y-t5t"
+    }
+  ],
+  "children@odata.context": "https://api.onedrive.com/v1.0/$metadata#shares('u%21aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaFZ5ajZpdXdHWmJzblFTWmpsT1BiX1ktdDV0P2U9SU1VcXBk')/items('5B66C0AEA88F7215%216516')/children",
+  "children@odata.count": 3,
+  "createdBy": {
+    "application": {
+      "displayName": "OneDrive website",
+      "id": "44048800"
+    },
+    "user": {
+      "displayName": "Atila Xavier",
+      "id": "5b66c0aea88f7215"
+    }
+  },
+  "createdDateTime": "2020-05-03T16:24:48.083Z",
+  "eTag": "aNUI2NkMwQUVBODhGNzIxNSE2NTE2LjE",
+  "fileSystemInfo": {
+    "createdDateTime": "2020-05-03T16:24:48.083Z",
+    "lastModifiedDateTime": "2020-05-03T16:24:48.083Z"
+  },
+  "folder": {
+    "childCount": 3,
+    "folderType": "document",
+    "folderView": {
+      "sortBy": "name",
+      "sortOrder": "ascending",
+      "viewType": "thumbnails"
+    }
+  },
+  "id": "5B66C0AEA88F7215!6516",
+  "lastModifiedBy": {
+    "application": {
+      "displayName": "OneDrive website",
+      "id": "44048800"
+    },
+    "user": {
+      "displayName": "Atila Xavier",
+      "id": "5b66c0aea88f7215"
+    }
+  },
+  "lastModifiedDateTime": "2020-05-03T16:26:26.623Z",
+  "name": "Pasta_Compartilhada_Publicamente",
+  "parentReference": {
+    "driveId": "5b66c0aea88f7215",
+    "driveType": "personal"
+  },
+  "reactions": {
+    "commentCount": 0
+  },
+  "shared": {
+    "effectiveRoles": [
+      "read"
+    ],
+    "owner": {
+      "user": {
+        "displayName": "Atila Xavier",
+        "id": "5b66c0aea88f7215"
+      }
+    },
+    "scope": "anonymous",
+    "sharedDateTime": "2020-05-03T16:26:26.6216097Z"
+  },
+  "size": 50178,
+  "webUrl": "https://1drv.ms/f/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t"
+} <_io.TextIOWrapper name='json_dump_root.txt' mode='w' encoding='cp1252'>

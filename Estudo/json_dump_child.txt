@@ -1,0 +1,72 @@
+{
+  "@odata.count": 1,
+  "value": [
+    {
+      "createdDateTime": "2020-05-03T16:23:26.34Z",
+      "lastModifiedBy": {
+        "application": {
+          "id": "44048800",
+          "displayName": "OneDrive website"
+        },
+        "user": {
+          "id": "5b66c0aea88f7215",
+          "displayName": "Atila Xavier"
+        }
+      },
+      "id": "5B66C0AEA88F7215!6513",
+      "size": 8367,
+      "cTag": "adDo1QjY2QzBBRUE4OEY3MjE1ITY1MTMuNjM3MjQxMjI5MDY5NzAwMDAw",
+      "reactions": {
+        "commentCount": 0
+      },
+      "parentReference": {
+        "driveType": "personal",
+        "path": "/shares/s!AhVyj6iuwGZbsnQSZjlOPb_Y-t5t/root:/Pasta%20Teste%202",
+        "shareId": "s!AhVyj6iuwGZbsmsSZjlOPb_Y-t5t",
+        "id": "5B66C0AEA88F7215!6507",
+        "name": "Pasta Teste 2",
+        "driveId": "5b66c0aea88f7215"
+      },
+      "createdBy": {
+        "application": {
+          "id": "44048800",
+          "displayName": "OneDrive website"
+        },
+        "user": {
+          "id": "5b66c0aea88f7215",
+          "displayName": "Atila Xavier"
+        }
+      },
+      "fileSystemInfo": {
+        "createdDateTime": "2020-05-03T16:23:26.34Z",
+        "lastModifiedDateTime": "2020-05-03T16:23:26.34Z"
+      },
+      "shared": {
+        "owner": {
+          "user": {
+            "id": "5b66c0aea88f7215",
+            "displayName": "Atila Xavier"
+          }
+        },
+        "effectiveRoles": [
+          "read"
+        ],
+        "scope": "anonymous"
+      },
+      "name": "Pasta_dentro_Pasta",
+      "folder": {
+        "childCount": 1,
+        "folderView": {
+          "sortOrder": "ascending",
+          "sortBy": "name",
+          "viewType": "thumbnails"
+        },
+        "folderType": "document"
+      },
+      "webUrl": "https://1drv.ms/f/s!AhVyj6iuwGZbsnESZjlOPb_Y-t5t",
+      "lastModifiedDateTime": "2020-05-03T17:15:06.97Z",
+      "eTag": "aNUI2NkMwQUVBODhGNzIxNSE2NTEzLjA"
+    }
+  ],
+  "@odata.context": "https://api.onedrive.com/v1.0/$metadata#shares('u%21aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBaFZ5ajZpdXdHWmJzblFTWmpsT1BiX1ktdDV0P2U9SU1VcXBk')/items('root%252FPasta%2520Teste%25202')/children"
+} <_io.TextIOWrapper name='json_dump_child.txt' mode='w' encoding='cp1252'>
