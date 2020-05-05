@@ -118,10 +118,20 @@ if __name__ == '__main__':
 	session = requests.Session()
 	myroot = session.get(url, headers = headers)
 	dt = data = myroot.json()
-	while "children@odata.nextLink" in dt:
-		r = session.get(dt['children@odata.nextLink'], headers = headers)
-		dt = r.json()
-		data['children'].extend(dt['value'])
+	cnt = 0
+	print("Root block info with %s bytes."%myroot.headers['Content-Length'])
+	if "children@odata.nextLink" in data:
+		next_url = data['children@odata.nextLink']
+		exist_next = True
+		while exist_next:
+			r = session.get(next_url, headers = headers)
+			print("Next root block info with %s bytes."%r.headers['Content-Length'])
+			dt = r.json()
+			data['children'].extend(dt['value'])
+			exist_next = "@odata.nextLink" in dt
+			if exist_next:
+				next_url = dt['@odata.nextLink']
+
 	"""
 	>>> data.keys()
 	dict_keys(['cTag', 'createdBy', 'webUrl', 'createdDateTime', 'size', 'lastModifiedBy', 'parentReference', 'children', '@odata.context', 'shared', 'eTag', 'children@odata.count', 'lastModifiedDateTime', 'name', 'children@odata.context', 'reactions', 'fileSystemInfo', 'id', 'folder'])
