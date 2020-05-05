@@ -51,24 +51,12 @@ def Dl_file(s, fchild, local_folder_name):
 			print("Error downloading %s: expected %d bytes, received %d bytes"%(out_path_file_name, fsize, received_size))
 
 def Dl_child(s, child, remote_folder_name, local_folder):
-	"""
-	>>> children[0].keys()
-	dict_keys(['cTag', 'createdBy', 'webUrl', 'createdDateTime', 'size', 'lastModifiedBy', 'parentReference', 'eTag', 'lastModifiedDateTime', 'name', 'reactions', 'fileSystemInfo', 'id', 'folder'])
-	"""
 	folder_name = child["name"]
 	remote_folder_name = remote_folder_name + "/" + folder_name
 	str_child = ":"+remote_folder_name+":/children"
 	url = url_base+str_child
 	mychild = s.get(url)
 	dchild = mychild.json()
-	"""
-	To see a readale print of JSON
-	f = open("out_child.txt","w")
-	print(json.dumps(dchild, indent=2), file=f)
-	f.close()
-	>>> dchild.keys()
-	dict_keys(['@odata.count', 'value', '@odata.context'])
-	"""
 	nfiles = dchild['@odata.count']  #8
 	local_folder_name = local_folder+"/"+folder_name
 	if not os.path.exists(local_folder_name):
@@ -76,15 +64,6 @@ def Dl_child(s, child, remote_folder_name, local_folder):
 		os.mkdir(local_folder_name)
 	print("Downloading %d file(s) from folder %s"%(nfiles, remote_folder_name))
 	for fchild in dchild["value"]:
-		"""
-		>>> dchild['value'][0].keys()
-		dict_keys(['cTag', 'createdBy', 'webUrl', 'createdDateTime', 'reactions', 'lastModifiedBy', 'parentReference', 'shared', 'eTag', 'size', 'file', '@content.downloadUrl', 'name', 'lastModifiedDateTime', 'fileSystemInfo', 'id'])
-		For files, there is a key "file"
-		OR
-		>>> dchild["value"][0].keys()
-		dict_keys(['createdDateTime', 'lastModifiedBy', 'id', 'size', 'cTag', 'reactions', 'parentReference', 'createdBy', 'fileSystemInfo', 'shared', 'name', 'folder', 'webUrl', 'lastModifiedDateTime', 'eTag'])
-		For folders, there is a key "folder"
-		"""
 		if "folder" in fchild:
 			Dl_child(s, fchild, remote_folder_name, local_folder_name)
 		else:
@@ -107,7 +86,6 @@ if __name__ == '__main__':
 	shared_url = args_main.shared_url
 	shared_url_b64 = base64.urlsafe_b64encode(shared_url.encode('ascii')).decode('ascii')
 	url_base = "https://api.onedrive.com/v1.0/shares/u!"+shared_url_b64	+"/root"
-	#url_base = "https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlheF84UlJreEtFTFJuU3M_ZT1aNDQzWkM/root"
 	str_root= "?expand=children"
 	url = url_base+str_root
 	headers = {
@@ -132,28 +110,6 @@ if __name__ == '__main__':
 			if exist_next:
 				next_url = dt['@odata.nextLink']
 
-	"""
-	>>> data.keys()
-	dict_keys(['cTag', 'createdBy', 'webUrl', 'createdDateTime', 'size', 'lastModifiedBy', 'parentReference', 'children', '@odata.context', 'shared', 'eTag', 'children@odata.count', 'lastModifiedDateTime', 'name', 'children@odata.context', 'reactions', 'fileSystemInfo', 'id', 'folder'])
-	
-	dict_keys(['id', 'parentReference', 'children', 'lastModifiedBy', 'children@odata.count', 'shared', 'webUrl', 'lastModifiedDateTime', 'children@odata.nextLink', 'reactions', 'createdDateTime', 'children@odata.context', 'cTag', 'eTag', 'name', 'fileSystemInfo', 'size', '@odata.context', 'folder', 'createdBy'])
-	>>> data['children@odata.nextLink']
-	"https://api.onedrive.com/v1.0/shares('u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlnaGgwNGkzWnBTeTZqSHNmP2U9SHV0STRX')/items('3D67852F00913287!280')/children/?$skiptoken=MjAx"
-	
-	 myroot2 = s.get(data['children@odata.nextLink'], headers = headers, stream=True)
-	data2 = myroot2.json() 
-	>>> data2.keys()
-	dict_keys(['value', '@odata.context', '@odata.nextLink', '@odata.count'])
-	>>> data2['@odata.count']
-	9184
-	>>> data2['@odata.nextLink']
-	"https://api.onedrive.com/v1.0/shares('u!aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBb2N5a1FBdmhXYzlnaGgwNGkzWnBTeTZqSHNmP2U9SHV0STRX')/items('3D67852F00913287!280')/children/?$skiptoken=NDAx"
-	>>> data['children'][0].keys()
-	dict_keys(['id', 'parentReference', 'cTag', 'lastModifiedBy', 'webUrl', 'lastModifiedDateTime', 'reactions', 'createdDateTime', 'createdBy', 'eTag', 'name', 'fileSystemInfo', 'size', 'folder'])
-	>>> data2['value'][0].keys()
-	dict_keys(['id', 'parentReference', 'cTag', 'lastModifiedBy', 'shared', 'webUrl', 'lastModifiedDateTime', 'reactions', 'createdDateTime', 'createdBy', 'eTag', 'name', 'fileSystemInfo', 'size', 'folder'])
-	data['children'].extend(data2['value'])
-	"""
 	child_count = data["folder"]["childCount"] 
 	children = data["children"] 
 	folder_name = ""
