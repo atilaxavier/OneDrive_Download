@@ -8,7 +8,7 @@ Thanks to instructions at https://stackoverflow.com/questions/40454101/access-pu
 """
 
 import requests
-import wget
+#import wget
 import os
 import base64
 import argparse
